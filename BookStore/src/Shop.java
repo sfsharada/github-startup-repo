@@ -8,10 +8,6 @@ public class Shop {
 		List<Magazines> maglist = new ArrayList<Magazines>();
 		List<EBook> ebooklist = new ArrayList<EBook>();
 
-		/*
-		 * Scanner sc = new Scanner(System.in); int numbooks = sc.nextInt(); for
-		 * (numbooks:sc.hasNext()){ }
-		 */
 		for (int i = 0; i < 2; i++) {
 			Books bookObj = new Books();
 			bookObj.setFirstName("bfirstname".concat(String.valueOf(i)));
