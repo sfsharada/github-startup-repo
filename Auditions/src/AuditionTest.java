@@ -1,4 +1,4 @@
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -6,7 +6,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
-public class AuditionMain {
+import org.junit.Test;
+
+public class AuditionTest {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
 
 	public static Map<String, List> mapAudition() {
 		List<Performer> performerList = new ArrayList<Performer>();
@@ -56,8 +63,8 @@ public class AuditionMain {
 		return map;
 	}
 
-	public static void main(String[] args) {
-
+	@Test
+	public void testM11ain() {
 		for (Map.Entry<String, List> entry : mapAudition().entrySet()) {
 			String key = entry.getKey();
 			System.out.println(key);
@@ -65,16 +72,18 @@ public class AuditionMain {
 			if ("Dancer".equalsIgnoreCase(key)) {
 				for (Object da : value) {
 					Dancer dancer = (Dancer) da;
+					assertEquals(dancer.getStyle() + "-" + dancer.getId() + "-" + "Dnacer",
+							dancer.getStyle() + "-" + dancer.getId() + "-" + "Dnacer");
 					System.out.println(dancer.getStyle() + "-" + dancer.getId() + "-" + "Dnacer");
 				}
 			}
 			if ("Performer".equalsIgnoreCase(key)) {
 				for (Object da : value) {
 					Performer performer = (Performer) da;
+					assertEquals(performer.getId() + "-" + "Performer", performer.getId() + "-" + "Performer");
 					System.out.println(performer.getId() + "-" + "Performer");
 				}
 			}
-
 			if ("Vocalist".equalsIgnoreCase(key)) {
 				for (Object da : value) {
 					Vocalist vocalist = (Vocalist) da;
@@ -97,7 +106,6 @@ public class AuditionMain {
 				}
 			}
 		}
-
 	}
 
 }
